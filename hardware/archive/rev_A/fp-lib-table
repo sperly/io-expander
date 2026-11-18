@@ -1,0 +1,1 @@
+(fp_lib_table (version 7) (lib (name "IO8_Footprints")(type "KiCad")(uri "${KIPRJMOD}/footprints.pretty")(options "")(descr "Reference copies of assigned KiCad footprints")))

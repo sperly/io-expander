@@ -1,0 +1,62 @@
+{
+    "$schema": "https://schemas.kicad.org/erc.v1.json",
+    "coordinate_units": "mm",
+    "date": "2026-11-17T14:44:41",
+    "ignored_checks": [
+        {
+            "description": "Global label only appears once in the schematic",
+            "key": "single_global_label"
+        },
+        {
+            "description": "Four connection points are joined together",
+            "key": "four_way_junction"
+        },
+        {
+            "description": "SPICE model issue",
+            "key": "simulation_model_issue"
+        },
+        {
+            "description": "Assigned footprint doesn't match footprint filters",
+            "key": "footprint_filter"
+        }
+    ],
+    "included_severities": [
+        "error",
+        "warning",
+        "exclusion"
+    ],
+    "kicad_version": "10.0.8",
+    "sheets": [
+        {
+            "path": "/",
+            "uuid_path": "/f7cd6618-db30-5c68-a93a-6fa9829ffccc",
+            "violations": []
+        },
+        {
+            "path": "/Power input and output supply selection/",
+            "uuid_path": "/f7cd6618-db30-5c68-a93a-6fa9829ffccc/b9244cb2-e058-55b7-bf27-563866006dc4",
+            "violations": []
+        },
+        {
+            "path": "/Microcontroller, EEPROM, address straps and SWD/",
+            "uuid_path": "/f7cd6618-db30-5c68-a93a-6fa9829ffccc/a34b3e60-3fd3-5c78-8eb1-ad985c4734c4",
+            "violations": []
+        },
+        {
+            "path": "/Serial interface - RS-485 / RS-232 (strap selectable)/",
+            "uuid_path": "/f7cd6618-db30-5c68-a93a-6fa9829ffccc/a5afb052-aeca-5f46-875e-2c0f0ae34e49",
+            "violations": []
+        },
+        {
+            "path": "/Output driver and output terminals/",
+            "uuid_path": "/f7cd6618-db30-5c68-a93a-6fa9829ffccc/c551b583-e84f-510b-b518-4bef931a6878",
+            "violations": []
+        },
+        {
+            "path": "/Isolated inputs and SPI input expander/",
+            "uuid_path": "/f7cd6618-db30-5c68-a93a-6fa9829ffccc/9983f1fd-53f3-57a6-9f4c-e7ceb7d7e167",
+            "violations": []
+        }
+    ],
+    "source": "RS485_IO8.kicad_sch"
+}

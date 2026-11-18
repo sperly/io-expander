@@ -1,0 +1,298 @@
+RS485_IO8 rev B schematic validation (kicad-cli 10.0.8)
+293 checks passed, 0 failed.
+
+PASS J1.1 on +5V (found +5V)
+PASS U1.1 on +5V (found +5V)
+PASS U1.3 on +5V (found +5V)
+PASS JP1.3 on +5V (found +5V)
+PASS JP8.2 on +5V (found +5V)
+PASS U1.5 on +3V3 (found +3V3)
+PASS U2.4 on +3V3 (found +3V3)
+PASS U3.4 on +3V3 (found +3V3)
+PASS U4.2 on +3V3 (found +3V3)
+PASS U4.12 on +3V3 (found +3V3)
+PASS U4.9 on +3V3 (found +3V3)
+PASS U5.6 on +3V3 (found +3V3)
+PASS U8.20 on +3V3 (found +3V3)
+PASS J3.1 on +3V3 (found +3V3)
+PASS JP1.2 on VIO (found VIO)
+PASS U5.16 on VIO (found VIO)
+PASS U5.21 on VIO (found VIO)
+PASS J6.2 on VIO (found VIO)
+PASS J7.2 on VIO (found VIO)
+PASS R1.1 on VIO (found VIO)
+PASS J2.1 on EXT_VIO (found EXT_VIO)
+PASS JP1.1 on EXT_VIO (found EXT_VIO)
+PASS J1.2 on GND (found GND)
+PASS J2.2 on GND (found GND)
+PASS U1.2 on GND (found GND)
+PASS U2.5 on GND (found GND)
+PASS U3.2 on GND (found GND)
+PASS U3.5 on GND (found GND)
+PASS U4.4 on GND (found GND)
+PASS U4.10 on GND (found GND)
+PASS U5.1 on GND (found GND)
+PASS U5.13 on GND (found GND)
+PASS U5.24 on GND (found GND)
+PASS U5.25 on GND (found GND)
+PASS U8.9 on GND (found GND)
+PASS U8.4 on GND (found GND)
+PASS U8.5 on GND (found GND)
+PASS J3.3 on GND (found GND)
+PASS J3.5 on GND (found GND)
+PASS J3.9 on GND (found GND)
+PASS J4.4 on GND (found GND)
+PASS J6.1 on GND (found GND)
+PASS J7.1 on GND (found GND)
+PASS J5.2 on GND (found GND)
+PASS D2.3 on GND (found GND)
+PASS D3.1 on GND (found GND)
+PASS D1.1 on GND (found GND)
+PASS JP2.2 on GND (found GND)
+PASS JP3.2 on GND (found GND)
+PASS JP4.1 on GND (found GND)
+PASS J10.5 on GND (found GND)
+PASS J10.SH on GND (found GND)
+PASS U6.15 on GND (found GND)
+PASS U6.13 on GND (found GND)
+PASS U6.11 on GND (found GND)
+PASS U6.9 on GND (found GND)
+PASS U7.15 on GND (found GND)
+PASS U7.13 on GND (found GND)
+PASS U7.11 on GND (found GND)
+PASS U7.9 on GND (found GND)
+PASS R1.2 on VIO_ADC (found VIO_ADC)
+PASS R2.1 on VIO_ADC (found VIO_ADC)
+PASS C5.1 on VIO_ADC (found VIO_ADC)
+PASS D1.3 on VIO_ADC (found VIO_ADC)
+PASS U2.7 on VIO_ADC (found VIO_ADC)
+PASS U2.6 on NRST (found NRST)
+PASS J3.10 on NRST (found NRST)
+PASS U8.6 on NRST (found NRST)
+PASS R3.2 on NRST (found NRST)
+PASS C8.1 on NRST (found NRST)
+PASS U2.8 on SPI_SCK (found SPI_SCK)
+PASS U5.20 on SPI_SCK (found SPI_SCK)
+PASS U8.1 on SPI_SCK (found SPI_SCK)
+PASS U2.9 on SPI_MOSI (found SPI_MOSI)
+PASS U5.5 on SPI_MOSI (found SPI_MOSI)
+PASS U8.2 on SPI_MOSI (found SPI_MOSI)
+PASS U2.13 on SPI_MISO (found SPI_MISO)
+PASS U5.7 on SPI_MISO (found SPI_MISO)
+PASS U8.3 on SPI_MISO (found SPI_MISO)
+PASS U2.10 on IN_IRQ (found IN_IRQ)
+PASS U8.8 on IN_IRQ (found IN_IRQ)
+PASS U2.11 on DRV_nCS (found DRV_nCS)
+PASS U5.19 on DRV_nCS (found DRV_nCS)
+PASS U2.12 on IN_nCS (found IN_nCS)
+PASS U8.7 on IN_nCS (found IN_nCS)
+PASS U2.14 on DRV_nSLEEP (found DRV_nSLEEP)
+PASS U5.8 on DRV_nSLEEP (found DRV_nSLEEP)
+PASS U2.15 on SER_DE (found SER_DE)
+PASS U4.15 on SER_DE (found SER_DE)
+PASS U2.16 on UART_TX (found UART_TX)
+PASS U4.16 on UART_TX (found UART_TX)
+PASS U2.17 on UART_RX (found UART_RX)
+PASS U4.8 on UART_RX (found UART_RX)
+PASS U2.18 on SWDIO (found SWDIO)
+PASS J3.2 on SWDIO (found SWDIO)
+PASS U2.19 on SWCLK (found SWCLK)
+PASS J3.4 on SWCLK (found SWCLK)
+PASS U2.1 on I2C_SDA (found I2C_SDA)
+PASS U3.3 on I2C_SDA (found I2C_SDA)
+PASS U2.20 on I2C_SCL (found I2C_SCL)
+PASS U3.1 on I2C_SCL (found I2C_SCL)
+PASS U2.2 on ADDR0 (found ADDR0)
+PASS JP2.1 on ADDR0 (found ADDR0)
+PASS U2.3 on ADDR1 (found ADDR1)
+PASS JP3.1 on ADDR1 (found ADDR1)
+PASS U4.6 on LINE_A (found LINE_A)
+PASS J4.1 on LINE_A (found LINE_A)
+PASS D2.2 on LINE_A (found LINE_A)
+PASS J10.1 on LINE_A (found LINE_A)
+PASS U4.5 on LINE_B_TXD (found LINE_B_TXD)
+PASS J4.2 on LINE_B_TXD (found LINE_B_TXD)
+PASS D2.1 on LINE_B_TXD (found LINE_B_TXD)
+PASS J10.2 on LINE_B_TXD (found LINE_B_TXD)
+PASS U4.13 on LINE_RXD (found LINE_RXD)
+PASS J4.3 on LINE_RXD (found LINE_RXD)
+PASS D3.2 on LINE_RXD (found LINE_RXD)
+PASS J10.3 on LINE_RXD (found LINE_RXD)
+PASS U4.11 on MODE (found MODE)
+PASS JP4.2 on MODE (found MODE)
+PASS U5.2 on OUT1 (found OUT1)
+PASS J6.6 on OUT1 (found OUT1)
+PASS U5.23 on OUT2 (found OUT2)
+PASS J6.5 on OUT2 (found OUT2)
+PASS U5.14 on OUT3 (found OUT3)
+PASS J6.4 on OUT3 (found OUT3)
+PASS U5.11 on OUT4 (found OUT4)
+PASS J6.3 on OUT4 (found OUT4)
+PASS U5.3 on OUT5 (found OUT5)
+PASS J7.6 on OUT5 (found OUT5)
+PASS U5.10 on OUT6 (found OUT6)
+PASS J7.5 on OUT6 (found OUT6)
+PASS U5.4 on OUT7 (found OUT7)
+PASS J7.4 on OUT7 (found OUT7)
+PASS U5.22 on OUT8 (found OUT8)
+PASS J7.3 on OUT8 (found OUT8)
+PASS U5.12 on DRV_nFAULT (found DRV_nFAULT)
+PASS J5.1 on DRV_nFAULT (found DRV_nFAULT)
+PASS U8.12 on IN1 (found IN1)
+PASS U6.16 on IN1 (found IN1)
+PASS U8.13 on IN2 (found IN2)
+PASS U6.14 on IN2 (found IN2)
+PASS U8.14 on IN3 (found IN3)
+PASS U6.12 on IN3 (found IN3)
+PASS U8.15 on IN4 (found IN4)
+PASS U6.10 on IN4 (found IN4)
+PASS U8.16 on IN5 (found IN5)
+PASS U7.16 on IN5 (found IN5)
+PASS U8.17 on IN6 (found IN6)
+PASS U7.14 on IN6 (found IN6)
+PASS U8.18 on IN7 (found IN7)
+PASS U7.12 on IN7 (found IN7)
+PASS U8.19 on IN8 (found IN8)
+PASS U7.10 on IN8 (found IN8)
+PASS J8.5 on COM1 (found COM1)
+PASS U6.2 on COM1 (found COM1)
+PASS U6.4 on COM1 (found COM1)
+PASS U6.6 on COM1 (found COM1)
+PASS U6.8 on COM1 (found COM1)
+PASS J9.5 on COM2 (found COM2)
+PASS U7.2 on COM2 (found COM2)
+PASS U7.4 on COM2 (found COM2)
+PASS U7.6 on COM2 (found COM2)
+PASS U7.8 on COM2 (found COM2)
+PASS J8.1 -> series resistor ['R16'] -> U6.1
+PASS J8.2 -> series resistor ['R19'] -> U6.3
+PASS J8.3 -> series resistor ['R22'] -> U6.5
+PASS J8.4 -> series resistor ['R25'] -> U6.7
+PASS J9.1 -> series resistor ['R28'] -> U7.1
+PASS J9.2 -> series resistor ['R31'] -> U7.3
+PASS J9.3 -> series resistor ['R34'] -> U7.5
+PASS J9.4 -> series resistor ['R37'] -> U7.7
+PASS +3V3 has no field-side connection
+PASS +5V has no field-side connection
+PASS GND has no field-side connection
+PASS VIO has no field-side connection
+PASS J10.6 and JP8.1 on one net
+PASS J10.6 separated from +5V by JP8
+PASS U4.6 and U4.5 on different nets
+PASS U4.5 and U4.13 on different nets
+PASS U4.11 and U4.4 on different nets
+PASS U4.15 and U4.4 on different nets
+PASS J3.7 intentionally unconnected
+PASS J3.8 intentionally unconnected
+PASS J3.6 intentionally unconnected
+PASS J10.4 intentionally unconnected
+PASS J10.7 intentionally unconnected
+PASS J10.8 intentionally unconnected
+PASS J10.9 intentionally unconnected
+PASS U1.4 intentionally unconnected
+PASS U4.14 intentionally unconnected
+PASS U4.7 intentionally unconnected
+PASS U5.9 intentionally unconnected
+PASS U5.15 intentionally unconnected
+PASS U5.17 intentionally unconnected
+PASS U5.18 intentionally unconnected
+PASS U8.10 intentionally unconnected
+PASS U8.11 intentionally unconnected
+PASS C1 footprint Capacitor_SMD:C_0805_2012Metric
+PASS C10 footprint Capacitor_SMD:C_0603_1608Metric
+PASS C11 footprint Capacitor_SMD:C_0603_1608Metric
+PASS C12 footprint Capacitor_SMD:C_0603_1608Metric
+PASS C13 footprint Capacitor_SMD:C_0603_1608Metric
+PASS C14 footprint Capacitor_SMD:C_0603_1608Metric
+PASS C15 footprint Capacitor_SMD:C_0603_1608Metric
+PASS C16 footprint Capacitor_SMD:C_0603_1608Metric
+PASS C17 footprint Capacitor_SMD:C_0603_1608Metric
+PASS C18 footprint Capacitor_SMD:C_1206_3216Metric
+PASS C19 footprint Capacitor_SMD:C_1206_3216Metric
+PASS C2 footprint Capacitor_SMD:C_0603_1608Metric
+PASS C20 footprint Capacitor_SMD:C_0603_1608Metric
+PASS C21 footprint Capacitor_SMD:C_0603_1608Metric
+PASS C3 footprint Capacitor_SMD:C_0805_2012Metric
+PASS C4 footprint Capacitor_SMD:C_0603_1608Metric
+PASS C5 footprint Capacitor_SMD:C_0603_1608Metric
+PASS C6 footprint Capacitor_SMD:C_0603_1608Metric
+PASS C7 footprint Capacitor_SMD:C_0603_1608Metric
+PASS C8 footprint Capacitor_SMD:C_0603_1608Metric
+PASS C9 footprint Capacitor_SMD:C_0603_1608Metric
+PASS D1 footprint Package_TO_SOT_SMD:SOT-23
+PASS D2 footprint Package_TO_SOT_SMD:SOT-23
+PASS D3 footprint Diode_SMD:D_SOD-323
+PASS H1 footprint MountingHole:MountingHole_3.2mm_M3
+PASS H2 footprint MountingHole:MountingHole_3.2mm_M3
+PASS H3 footprint MountingHole:MountingHole_3.2mm_M3
+PASS H4 footprint MountingHole:MountingHole_3.2mm_M3
+PASS J1 footprint TerminalBlock:TerminalBlock_Xinya_XY308-2.54-2P_1x02_P2.54mm_Horizontal
+PASS J10 footprint Connector_Dsub:DSUB-9_Socket_Horizontal_P2.77x2.84mm_EdgePinOffset7.70mm_Housed_MountingHolesOffset9.12mm
+PASS J2 footprint TerminalBlock:TerminalBlock_Xinya_XY308-2.54-2P_1x02_P2.54mm_Horizontal
+PASS J3 footprint Connector_PinHeader_1.27mm:PinHeader_2x05_P1.27mm_Vertical
+PASS J4 footprint TerminalBlock:TerminalBlock_Xinya_XY308-2.54-4P_1x04_P2.54mm_Horizontal
+PASS J5 footprint Connector_PinHeader_2.54mm:PinHeader_1x02_P2.54mm_Vertical
+PASS J6 footprint TerminalBlock:TerminalBlock_Xinya_XY308-2.54-6P_1x06_P2.54mm_Horizontal
+PASS J7 footprint TerminalBlock:TerminalBlock_Xinya_XY308-2.54-6P_1x06_P2.54mm_Horizontal
+PASS J8 footprint TerminalBlock:TerminalBlock_Xinya_XY308-2.54-5P_1x05_P2.54mm_Horizontal
+PASS J9 footprint TerminalBlock:TerminalBlock_Xinya_XY308-2.54-5P_1x05_P2.54mm_Horizontal
+PASS JP1 footprint Connector_PinHeader_2.54mm:PinHeader_1x03_P2.54mm_Vertical
+PASS JP2 footprint Connector_PinHeader_2.54mm:PinHeader_1x02_P2.54mm_Vertical
+PASS JP3 footprint Connector_PinHeader_2.54mm:PinHeader_1x02_P2.54mm_Vertical
+PASS JP4 footprint Connector_PinHeader_2.54mm:PinHeader_1x02_P2.54mm_Vertical
+PASS JP5 footprint Connector_PinHeader_2.54mm:PinHeader_1x02_P2.54mm_Vertical
+PASS JP6 footprint Connector_PinHeader_2.54mm:PinHeader_1x02_P2.54mm_Vertical
+PASS JP7 footprint Connector_PinHeader_2.54mm:PinHeader_1x02_P2.54mm_Vertical
+PASS JP8 footprint Jumper:SolderJumper-2_P1.3mm_Bridged_RoundedPad1.0x1.5mm
+PASS R1 footprint Resistor_SMD:R_0603_1608Metric
+PASS R10 footprint Resistor_SMD:R_1206_3216Metric
+PASS R11 footprint Resistor_SMD:R_0603_1608Metric
+PASS R12 footprint Resistor_SMD:R_0603_1608Metric
+PASS R13 footprint Resistor_SMD:R_0603_1608Metric
+PASS R14 footprint Resistor_SMD:R_0603_1608Metric
+PASS R15 footprint Resistor_SMD:R_0603_1608Metric
+PASS R16 footprint Resistor_SMD:R_1206_3216Metric
+PASS R17 footprint Resistor_SMD:R_0603_1608Metric
+PASS R18 footprint Resistor_SMD:R_0603_1608Metric
+PASS R19 footprint Resistor_SMD:R_1206_3216Metric
+PASS R2 footprint Resistor_SMD:R_0603_1608Metric
+PASS R20 footprint Resistor_SMD:R_0603_1608Metric
+PASS R21 footprint Resistor_SMD:R_0603_1608Metric
+PASS R22 footprint Resistor_SMD:R_1206_3216Metric
+PASS R23 footprint Resistor_SMD:R_0603_1608Metric
+PASS R24 footprint Resistor_SMD:R_0603_1608Metric
+PASS R25 footprint Resistor_SMD:R_1206_3216Metric
+PASS R26 footprint Resistor_SMD:R_0603_1608Metric
+PASS R27 footprint Resistor_SMD:R_0603_1608Metric
+PASS R28 footprint Resistor_SMD:R_1206_3216Metric
+PASS R29 footprint Resistor_SMD:R_0603_1608Metric
+PASS R3 footprint Resistor_SMD:R_0603_1608Metric
+PASS R30 footprint Resistor_SMD:R_0603_1608Metric
+PASS R31 footprint Resistor_SMD:R_1206_3216Metric
+PASS R32 footprint Resistor_SMD:R_0603_1608Metric
+PASS R33 footprint Resistor_SMD:R_0603_1608Metric
+PASS R34 footprint Resistor_SMD:R_1206_3216Metric
+PASS R35 footprint Resistor_SMD:R_0603_1608Metric
+PASS R36 footprint Resistor_SMD:R_0603_1608Metric
+PASS R37 footprint Resistor_SMD:R_1206_3216Metric
+PASS R38 footprint Resistor_SMD:R_0603_1608Metric
+PASS R39 footprint Resistor_SMD:R_0603_1608Metric
+PASS R4 footprint Resistor_SMD:R_0603_1608Metric
+PASS R40 footprint Resistor_SMD:R_0603_1608Metric
+PASS R41 footprint Resistor_SMD:R_0603_1608Metric
+PASS R5 footprint Resistor_SMD:R_0603_1608Metric
+PASS R6 footprint Resistor_SMD:R_0603_1608Metric
+PASS R7 footprint Resistor_SMD:R_0603_1608Metric
+PASS R8 footprint Resistor_SMD:R_0603_1608Metric
+PASS R9 footprint Resistor_SMD:R_0603_1608Metric
+PASS U1 footprint Package_TO_SOT_SMD:SOT-23-5
+PASS U2 footprint Package_SO:TSSOP-20_4.4x6.5mm_P0.65mm
+PASS U3 footprint Package_TO_SOT_SMD:SOT-23-5
+PASS U4 footprint Package_SO:SSOP-20_5.3x7.2mm_P0.65mm
+PASS U5 footprint Package_SO:HTSSOP-24-1EP_4.4x7.8mm_P0.65mm_EP3.4x7.8mm_Mask2.4x4.68mm_ThermalVias
+PASS U6 footprint Package_SO:SOP-16_4.55x10.3mm_P1.27mm
+PASS U7 footprint Package_SO:SOP-16_4.55x10.3mm_P1.27mm
+PASS U8 footprint Package_SO:SSOP-20_5.3x7.2mm_P0.65mm
+PASS KiCad ERC: 0 violations (errors + warnings)
+
+Not hardware tested.

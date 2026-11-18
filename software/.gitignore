@@ -1,0 +1,16 @@
+# CMake build trees and local configuration
+/build/
+/build-*/
+/cmake-build-*/
+/CMakeUserPresets.json
+/compile_commands.json
+
+# Python client caches and local environments
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+
+# Operating system metadata
+.DS_Store
+Thumbs.db

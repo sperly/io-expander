@@ -1,0 +1,85 @@
+Reference,Value,Footprint,MPN,Sheet
+J1,5V_IN / GND,Connector_PinHeader_2.54mm:PinHeader_1x02_P2.54mm_Vertical,5V_IN / GND,"01 - Power, supply selection and overview"
+U1,AP2112K-3.3TRG1,Package_TO_SOT_SMD:SOT-23-5,AP2112K-3.3TRG1,"01 - Power, supply selection and overview"
+C1,10uF / 10V X7R,Capacitor_SMD:C_0805_2012Metric,Generic ceramic 10uF / 10V X7R,"01 - Power, supply selection and overview"
+C2,1uF / 10V X7R,Capacitor_SMD:C_0603_1608Metric,Generic ceramic 1uF / 10V X7R,"01 - Power, supply selection and overview"
+C3,4.7uF / 10V X7R,Capacitor_SMD:C_0805_2012Metric,Generic ceramic 4.7uF / 10V X7R,"01 - Power, supply selection and overview"
+C4,100nF / 10V X7R,Capacitor_SMD:C_0603_1608Metric,Generic ceramic 100nF / 10V X7R,"01 - Power, supply selection and overview"
+J2,EXT_VIO / GND,Connector_PinHeader_2.54mm:PinHeader_1x02_P2.54mm_Vertical,EXT_VIO / GND,"01 - Power, supply selection and overview"
+JP1,VIO SELECT - ONE SHUNT,Connector_PinHeader_2.54mm:PinHeader_1x03_P2.54mm_Vertical,VIO SELECT - ONE SHUNT,"01 - Power, supply selection and overview"
+R1,100k,Resistor_SMD:R_0603_1608Metric,Generic 100k 1% 0603,"01 - Power, supply selection and overview"
+R2,22k,Resistor_SMD:R_0603_1608Metric,Generic 22k 1% 0603,"01 - Power, supply selection and overview"
+C5,1nF / 50V C0G,Capacitor_SMD:C_0603_1608Metric,Generic ceramic 1nF / 50V C0G,"01 - Power, supply selection and overview"
+D1,BAT54S,Package_TO_SOT_SMD:SOT-23,BAT54S,"01 - Power, supply selection and overview"
+U2,STM32G030F6P6,Package_SO:TSSOP-20_4.4x6.5mm_P0.65mm,STM32G030F6P6,"02 - TSSOP controller, EEPROM and address straps"
+C6,100nF / 10V X7R,Capacitor_SMD:C_0603_1608Metric,Generic ceramic 100nF / 10V X7R,"02 - TSSOP controller, EEPROM and address straps"
+C7,4.7uF / 10V X7R,Capacitor_SMD:C_0603_1608Metric,Generic ceramic 4.7uF / 10V X7R,"02 - TSSOP controller, EEPROM and address straps"
+R3,10k,Resistor_SMD:R_0603_1608Metric,Generic 10k 1% 0603,"02 - TSSOP controller, EEPROM and address straps"
+C8,100nF / 10V X7R,Capacitor_SMD:C_0603_1608Metric,Generic ceramic 100nF / 10V X7R,"02 - TSSOP controller, EEPROM and address straps"
+U3,24AA02T-I/OT,Package_TO_SOT_SMD:SOT-23-5,24AA02T-I/OT,"02 - TSSOP controller, EEPROM and address straps"
+C9,100nF / 10V X7R,Capacitor_SMD:C_0603_1608Metric,Generic ceramic 100nF / 10V X7R,"02 - TSSOP controller, EEPROM and address straps"
+R4,4.7k,Resistor_SMD:R_0603_1608Metric,Generic 4.7k 1% 0603,"02 - TSSOP controller, EEPROM and address straps"
+R5,4.7k,Resistor_SMD:R_0603_1608Metric,Generic 4.7k 1% 0603,"02 - TSSOP controller, EEPROM and address straps"
+J3,CORTEX SWD 2x5 / 1.27mm,Connector_PinHeader_1.27mm:PinHeader_2x05_P1.27mm_Vertical,ARM Cortex 10-pin 1.27mm header; key pin 7 omitted,"02 - TSSOP controller, EEPROM and address straps"
+R6,10k,Resistor_SMD:R_0603_1608Metric,Generic 10k 1% 0603,"02 - TSSOP controller, EEPROM and address straps"
+JP2,ADDR0 STRAP,Connector_PinHeader_2.54mm:PinHeader_1x02_P2.54mm_Vertical,ADDR0 STRAP,"02 - TSSOP controller, EEPROM and address straps"
+R7,10k,Resistor_SMD:R_0603_1608Metric,Generic 10k 1% 0603,"02 - TSSOP controller, EEPROM and address straps"
+JP3,ADDR1 STRAP,Connector_PinHeader_2.54mm:PinHeader_1x02_P2.54mm_Vertical,ADDR1 STRAP,"02 - TSSOP controller, EEPROM and address straps"
+U4,THVD1410D,Package_SO:SOIC-8_3.9x4.9mm_P1.27mm,THVD1410D,03 - RS-485 interface
+J4,RS485 A / B / GND,Connector_PinHeader_2.54mm:PinHeader_1x03_P2.54mm_Vertical,RS485 A / B / GND,03 - RS-485 interface
+D2,SM712,Package_TO_SOT_SMD:SOT-23,SM712,03 - RS-485 interface
+C10,100nF / 10V X7R,Capacitor_SMD:C_0603_1608Metric,Generic ceramic 100nF / 10V X7R,03 - RS-485 interface
+R8,100k,Resistor_SMD:R_0603_1608Metric,Generic 100k 1% 0603,03 - RS-485 interface
+R9,120R / 0.25W,Resistor_SMD:R_1206_3216Metric,Generic 120R / 0.25W 1% 0603,03 - RS-485 interface
+JP4,FIT ONLY AT BUS END,Connector_PinHeader_2.54mm:PinHeader_1x02_P2.54mm_Vertical,FIT ONLY AT BUS END,03 - RS-485 interface
+R10,390R,Resistor_SMD:R_0603_1608Metric,Generic 390R 1% 0603,03 - RS-485 interface
+JP5,BIAS A ENABLE,Connector_PinHeader_2.54mm:PinHeader_1x02_P2.54mm_Vertical,BIAS A ENABLE,03 - RS-485 interface
+R11,390R,Resistor_SMD:R_0603_1608Metric,Generic 390R 1% 0603,03 - RS-485 interface
+JP6,BIAS B ENABLE,Connector_PinHeader_2.54mm:PinHeader_1x02_P2.54mm_Vertical,BIAS B ENABLE,03 - RS-485 interface
+U5,DRV8908QPWPRQ1,Package_SO:HTSSOP-24-1EP_4.4x7.8mm_P0.65mm_EP3.4x7.8mm_Mask2.4x4.68mm,DRV8908QPWPRQ1,04 - Eight-channel high-side / low-side driver
+J5,"VIO, GND, IO1 ... IO8",Connector_PinHeader_2.54mm:PinHeader_1x10_P2.54mm_Vertical,"VIO, GND, IO1 ... IO8",04 - Eight-channel high-side / low-side driver
+R12,10k,Resistor_SMD:R_0603_1608Metric,Generic 10k 1% 0603,04 - Eight-channel high-side / low-side driver
+R13,100k,Resistor_SMD:R_0603_1608Metric,Generic 100k 1% 0603,04 - Eight-channel high-side / low-side driver
+R14,10k,Resistor_SMD:R_0603_1608Metric,Generic 10k 1% 0603,04 - Eight-channel high-side / low-side driver
+J6,FAULT TEST: nFAULT / GND,Connector_PinHeader_2.54mm:PinHeader_1x02_P2.54mm_Vertical,FAULT TEST: nFAULT / GND,04 - Eight-channel high-side / low-side driver
+C11,100nF / 10V X7R,Capacitor_SMD:C_0603_1608Metric,Generic ceramic 100nF / 10V X7R,04 - Eight-channel high-side / low-side driver
+C12,1uF / 10V X7R,Capacitor_SMD:C_0603_1608Metric,Generic ceramic 1uF / 10V X7R,04 - Eight-channel high-side / low-side driver
+C13,100nF / 50V X7R,Capacitor_SMD:C_0603_1608Metric,Generic ceramic 100nF / 50V X7R,04 - Eight-channel high-side / low-side driver
+C14,22uF / 25V X7R,Capacitor_SMD:C_1210_3225Metric,Generic ceramic 22uF / 25V X7R,04 - Eight-channel high-side / low-side driver
+U6,MCP23S08-E/SS,Package_SO:SSOP-20_5.3x7.2mm_P0.65mm,MCP23S08-E/SS,05 - SPI digital input expander
+C15,100nF / 10V X7R,Capacitor_SMD:C_0603_1608Metric,Generic ceramic 100nF / 10V X7R,05 - SPI digital input expander
+C16,1uF / 10V X7R,Capacitor_SMD:C_0603_1608Metric,Generic ceramic 1uF / 10V X7R,05 - SPI digital input expander
+R15,10k,Resistor_SMD:R_0603_1608Metric,Generic 10k 1% 0603,05 - SPI digital input expander
+R16,10k,Resistor_SMD:R_0603_1608Metric,Generic 10k 1% 0603,05 - SPI digital input expander
+R17,47k,Resistor_SMD:R_0603_1608Metric,Generic 47k 1% 0603,06 - Eight independent 5 V / 12 V input sensing branches
+R18,22k,Resistor_SMD:R_0603_1608Metric,Generic 22k 1% 0603,06 - Eight independent 5 V / 12 V input sensing branches
+Q1,BC847B,Package_TO_SOT_SMD:SOT-23,"BC847B,215",06 - Eight independent 5 V / 12 V input sensing branches
+R19,10k,Resistor_SMD:R_0603_1608Metric,Generic 10k 1% 0603,06 - Eight independent 5 V / 12 V input sensing branches
+R20,47k,Resistor_SMD:R_0603_1608Metric,Generic 47k 1% 0603,06 - Eight independent 5 V / 12 V input sensing branches
+R21,22k,Resistor_SMD:R_0603_1608Metric,Generic 22k 1% 0603,06 - Eight independent 5 V / 12 V input sensing branches
+Q2,BC847B,Package_TO_SOT_SMD:SOT-23,"BC847B,215",06 - Eight independent 5 V / 12 V input sensing branches
+R22,10k,Resistor_SMD:R_0603_1608Metric,Generic 10k 1% 0603,06 - Eight independent 5 V / 12 V input sensing branches
+R23,47k,Resistor_SMD:R_0603_1608Metric,Generic 47k 1% 0603,06 - Eight independent 5 V / 12 V input sensing branches
+R24,22k,Resistor_SMD:R_0603_1608Metric,Generic 22k 1% 0603,06 - Eight independent 5 V / 12 V input sensing branches
+Q3,BC847B,Package_TO_SOT_SMD:SOT-23,"BC847B,215",06 - Eight independent 5 V / 12 V input sensing branches
+R25,10k,Resistor_SMD:R_0603_1608Metric,Generic 10k 1% 0603,06 - Eight independent 5 V / 12 V input sensing branches
+R26,47k,Resistor_SMD:R_0603_1608Metric,Generic 47k 1% 0603,06 - Eight independent 5 V / 12 V input sensing branches
+R27,22k,Resistor_SMD:R_0603_1608Metric,Generic 22k 1% 0603,06 - Eight independent 5 V / 12 V input sensing branches
+Q4,BC847B,Package_TO_SOT_SMD:SOT-23,"BC847B,215",06 - Eight independent 5 V / 12 V input sensing branches
+R28,10k,Resistor_SMD:R_0603_1608Metric,Generic 10k 1% 0603,06 - Eight independent 5 V / 12 V input sensing branches
+R29,47k,Resistor_SMD:R_0603_1608Metric,Generic 47k 1% 0603,06 - Eight independent 5 V / 12 V input sensing branches
+R30,22k,Resistor_SMD:R_0603_1608Metric,Generic 22k 1% 0603,06 - Eight independent 5 V / 12 V input sensing branches
+Q5,BC847B,Package_TO_SOT_SMD:SOT-23,"BC847B,215",06 - Eight independent 5 V / 12 V input sensing branches
+R31,10k,Resistor_SMD:R_0603_1608Metric,Generic 10k 1% 0603,06 - Eight independent 5 V / 12 V input sensing branches
+R32,47k,Resistor_SMD:R_0603_1608Metric,Generic 47k 1% 0603,06 - Eight independent 5 V / 12 V input sensing branches
+R33,22k,Resistor_SMD:R_0603_1608Metric,Generic 22k 1% 0603,06 - Eight independent 5 V / 12 V input sensing branches
+Q6,BC847B,Package_TO_SOT_SMD:SOT-23,"BC847B,215",06 - Eight independent 5 V / 12 V input sensing branches
+R34,10k,Resistor_SMD:R_0603_1608Metric,Generic 10k 1% 0603,06 - Eight independent 5 V / 12 V input sensing branches
+R35,47k,Resistor_SMD:R_0603_1608Metric,Generic 47k 1% 0603,06 - Eight independent 5 V / 12 V input sensing branches
+R36,22k,Resistor_SMD:R_0603_1608Metric,Generic 22k 1% 0603,06 - Eight independent 5 V / 12 V input sensing branches
+Q7,BC847B,Package_TO_SOT_SMD:SOT-23,"BC847B,215",06 - Eight independent 5 V / 12 V input sensing branches
+R37,10k,Resistor_SMD:R_0603_1608Metric,Generic 10k 1% 0603,06 - Eight independent 5 V / 12 V input sensing branches
+R38,47k,Resistor_SMD:R_0603_1608Metric,Generic 47k 1% 0603,06 - Eight independent 5 V / 12 V input sensing branches
+R39,22k,Resistor_SMD:R_0603_1608Metric,Generic 22k 1% 0603,06 - Eight independent 5 V / 12 V input sensing branches
+Q8,BC847B,Package_TO_SOT_SMD:SOT-23,"BC847B,215",06 - Eight independent 5 V / 12 V input sensing branches
+R40,10k,Resistor_SMD:R_0603_1608Metric,Generic 10k 1% 0603,06 - Eight independent 5 V / 12 V input sensing branches

@@ -1,0 +1,4 @@
+(sym_lib_table
+	(version 7)
+	(lib (name "IO8")(type "KiCad")(uri "${KIPRJMOD}/IO8.kicad_sym")(options "")(descr "Project symbols: MAX3160, DRV8912-Q1, MCP23S08 SSOP, VIO"))
+)

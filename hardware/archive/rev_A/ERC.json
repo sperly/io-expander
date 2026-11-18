@@ -1,0 +1,39 @@
+{
+    "$schema": "https://schemas.kicad.org/erc.v1.json",
+    "coordinate_units": "mm",
+    "date": "2026-11-17T09:50:08+0100",
+    "kicad_version": "9.0.2",
+    "sheets": [
+        {
+            "path": "/",
+            "uuid_path": "/14938846-6c70-4701-b936-990ba43df7fc",
+            "violations": []
+        },
+        {
+            "path": "/Controller and EEPROM/",
+            "uuid_path": "/14938846-6c70-4701-b936-990ba43df7fc/5e43e1f7-a023-438c-9bfc-9d48d2e3552d",
+            "violations": []
+        },
+        {
+            "path": "/RS-485/",
+            "uuid_path": "/14938846-6c70-4701-b936-990ba43df7fc/8151149b-6b8a-4321-8d1a-7e6ea7d69ca2",
+            "violations": []
+        },
+        {
+            "path": "/Output driver/",
+            "uuid_path": "/14938846-6c70-4701-b936-990ba43df7fc/817d8583-6717-4adb-9da8-a520accda007",
+            "violations": []
+        },
+        {
+            "path": "/SPI input expander/",
+            "uuid_path": "/14938846-6c70-4701-b936-990ba43df7fc/3f90cd14-669f-4727-927c-ed1a0b101e45",
+            "violations": []
+        },
+        {
+            "path": "/Input sensing/",
+            "uuid_path": "/14938846-6c70-4701-b936-990ba43df7fc/3626fe0e-de25-4af3-b061-86a16e02abfd",
+            "violations": []
+        }
+    ],
+    "source": "RS485_IO8.kicad_sch"
+}

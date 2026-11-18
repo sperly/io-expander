@@ -1,0 +1,217 @@
+RS485_IO8 revision A schematic validation
+Date: 2026-11-17
+KiCad CLI: 9.0.2
+
+210 connectivity / footprint / ERC checks passed.
+PASS U2.4 connected to +3V3
+PASS U2.5 connected to GND
+PASS U2.6 connected to NRST
+PASS U2.7 connected to VIO_ADC
+PASS U2.8 connected to SPI_SCK
+PASS U2.9 connected to SPI_MOSI
+PASS U2.13 connected to SPI_MISO
+PASS U2.11 connected to DRV_nCS
+PASS U2.12 connected to IN_nCS
+PASS U2.14 connected to DRV_nSLEEP
+PASS U2.1 connected to I2C_SDA
+PASS U2.20 connected to I2C_SCL
+PASS U2.2 connected to ADDR0
+PASS U2.3 connected to ADDR1
+PASS U2.10 connected to IN_IRQ
+PASS U2.15 connected to RS485_TXEN
+PASS U2.16 connected to UART_TX
+PASS U2.17 connected to UART_RX
+PASS U2.18 connected to SWDIO
+PASS U2.19 connected to SWCLK
+PASS U5.6 connected to +3V3
+PASS U5.16 connected to VIO
+PASS U5.21 connected to VIO
+PASS U5.20 connected to SPI_SCK
+PASS U5.5 connected to SPI_MOSI
+PASS U5.7 connected to SPI_MISO
+PASS U5.19 connected to DRV_nCS
+PASS U5.8 connected to DRV_nSLEEP
+PASS U5.12 connected to DRV_nFAULT
+PASS U5.1 connected to GND
+PASS U5.13 connected to GND
+PASS U5.24 connected to GND
+PASS U5.25 connected to GND
+PASS U5.2 connected to IO1
+PASS U5.23 connected to IO2
+PASS U5.14 connected to IO3
+PASS U5.11 connected to IO4
+PASS U5.3 connected to IO5
+PASS U5.10 connected to IO6
+PASS U5.4 connected to IO7
+PASS U5.22 connected to IO8
+PASS U6.20 connected to +3V3
+PASS U6.9 connected to GND
+PASS U6.1 connected to SPI_SCK
+PASS U6.2 connected to SPI_MOSI
+PASS U6.3 connected to SPI_MISO
+PASS U6.7 connected to IN_nCS
+PASS U6.6 connected to NRST
+PASS U6.8 connected to IN_IRQ
+PASS U6.4 connected to GND
+PASS U6.5 connected to GND
+PASS U6.12 connected to IN1_RAW
+PASS U6.13 connected to IN2_RAW
+PASS U6.14 connected to IN3_RAW
+PASS U6.15 connected to IN4_RAW
+PASS U6.16 connected to IN5_RAW
+PASS U6.17 connected to IN6_RAW
+PASS U6.18 connected to IN7_RAW
+PASS U6.19 connected to IN8_RAW
+PASS IO1: driver directly connected to terminal
+PASS IO1: only driver, terminal and sensing branch on terminal net
+PASS IO1: sensing branch resistor connected
+PASS IO1: base divider connected
+PASS IO1: emitter and base pull-down grounded
+PASS IO1: collector pull-up powered at 3.3 V
+PASS IO1: readback reaches expander
+PASS IO2: driver directly connected to terminal
+PASS IO2: only driver, terminal and sensing branch on terminal net
+PASS IO2: sensing branch resistor connected
+PASS IO2: base divider connected
+PASS IO2: emitter and base pull-down grounded
+PASS IO2: collector pull-up powered at 3.3 V
+PASS IO2: readback reaches expander
+PASS IO3: driver directly connected to terminal
+PASS IO3: only driver, terminal and sensing branch on terminal net
+PASS IO3: sensing branch resistor connected
+PASS IO3: base divider connected
+PASS IO3: emitter and base pull-down grounded
+PASS IO3: collector pull-up powered at 3.3 V
+PASS IO3: readback reaches expander
+PASS IO4: driver directly connected to terminal
+PASS IO4: only driver, terminal and sensing branch on terminal net
+PASS IO4: sensing branch resistor connected
+PASS IO4: base divider connected
+PASS IO4: emitter and base pull-down grounded
+PASS IO4: collector pull-up powered at 3.3 V
+PASS IO4: readback reaches expander
+PASS IO5: driver directly connected to terminal
+PASS IO5: only driver, terminal and sensing branch on terminal net
+PASS IO5: sensing branch resistor connected
+PASS IO5: base divider connected
+PASS IO5: emitter and base pull-down grounded
+PASS IO5: collector pull-up powered at 3.3 V
+PASS IO5: readback reaches expander
+PASS IO6: driver directly connected to terminal
+PASS IO6: only driver, terminal and sensing branch on terminal net
+PASS IO6: sensing branch resistor connected
+PASS IO6: base divider connected
+PASS IO6: emitter and base pull-down grounded
+PASS IO6: collector pull-up powered at 3.3 V
+PASS IO6: readback reaches expander
+PASS IO7: driver directly connected to terminal
+PASS IO7: only driver, terminal and sensing branch on terminal net
+PASS IO7: sensing branch resistor connected
+PASS IO7: base divider connected
+PASS IO7: emitter and base pull-down grounded
+PASS IO7: collector pull-up powered at 3.3 V
+PASS IO7: readback reaches expander
+PASS IO8: driver directly connected to terminal
+PASS IO8: only driver, terminal and sensing branch on terminal net
+PASS IO8: sensing branch resistor connected
+PASS IO8: base divider connected
+PASS IO8: emitter and base pull-down grounded
+PASS IO8: collector pull-up powered at 3.3 V
+PASS IO8: readback reaches expander
+PASS Cortex SWD pin 1: +3V3
+PASS Cortex SWD pin 2: SWDIO
+PASS Cortex SWD pin 3: GND
+PASS Cortex SWD pin 4: SWCLK
+PASS Cortex SWD pin 5: GND
+PASS Cortex SWD pin 9: GND
+PASS Cortex SWD pin 10: NRST
+PASS Cortex SWD pin 6: intentionally unconnected
+PASS Cortex SWD pin 7: intentionally unconnected
+PASS Cortex SWD pin 8: intentionally unconnected
+PASS J1: assigned footprint exists
+PASS U1: assigned footprint exists
+PASS C1: assigned footprint exists
+PASS C2: assigned footprint exists
+PASS C3: assigned footprint exists
+PASS C4: assigned footprint exists
+PASS J2: assigned footprint exists
+PASS JP1: assigned footprint exists
+PASS R1: assigned footprint exists
+PASS R2: assigned footprint exists
+PASS C5: assigned footprint exists
+PASS D1: assigned footprint exists
+PASS U2: assigned footprint exists
+PASS C6: assigned footprint exists
+PASS C7: assigned footprint exists
+PASS R3: assigned footprint exists
+PASS C8: assigned footprint exists
+PASS U3: assigned footprint exists
+PASS C9: assigned footprint exists
+PASS R4: assigned footprint exists
+PASS R5: assigned footprint exists
+PASS J3: assigned footprint exists
+PASS R6: assigned footprint exists
+PASS JP2: assigned footprint exists
+PASS R7: assigned footprint exists
+PASS JP3: assigned footprint exists
+PASS U4: assigned footprint exists
+PASS J4: assigned footprint exists
+PASS D2: assigned footprint exists
+PASS C10: assigned footprint exists
+PASS R8: assigned footprint exists
+PASS R9: assigned footprint exists
+PASS JP4: assigned footprint exists
+PASS R10: assigned footprint exists
+PASS JP5: assigned footprint exists
+PASS R11: assigned footprint exists
+PASS JP6: assigned footprint exists
+PASS U5: assigned footprint exists
+PASS J5: assigned footprint exists
+PASS R12: assigned footprint exists
+PASS R13: assigned footprint exists
+PASS R14: assigned footprint exists
+PASS J6: assigned footprint exists
+PASS C11: assigned footprint exists
+PASS C12: assigned footprint exists
+PASS C13: assigned footprint exists
+PASS C14: assigned footprint exists
+PASS U6: assigned footprint exists
+PASS C15: assigned footprint exists
+PASS C16: assigned footprint exists
+PASS R15: assigned footprint exists
+PASS R16: assigned footprint exists
+PASS R17: assigned footprint exists
+PASS R18: assigned footprint exists
+PASS Q1: assigned footprint exists
+PASS R19: assigned footprint exists
+PASS R20: assigned footprint exists
+PASS R21: assigned footprint exists
+PASS Q2: assigned footprint exists
+PASS R22: assigned footprint exists
+PASS R23: assigned footprint exists
+PASS R24: assigned footprint exists
+PASS Q3: assigned footprint exists
+PASS R25: assigned footprint exists
+PASS R26: assigned footprint exists
+PASS R27: assigned footprint exists
+PASS Q4: assigned footprint exists
+PASS R28: assigned footprint exists
+PASS R29: assigned footprint exists
+PASS R30: assigned footprint exists
+PASS Q5: assigned footprint exists
+PASS R31: assigned footprint exists
+PASS R32: assigned footprint exists
+PASS R33: assigned footprint exists
+PASS Q6: assigned footprint exists
+PASS R34: assigned footprint exists
+PASS R35: assigned footprint exists
+PASS R36: assigned footprint exists
+PASS Q7: assigned footprint exists
+PASS R37: assigned footprint exists
+PASS R38: assigned footprint exists
+PASS R39: assigned footprint exists
+PASS Q8: assigned footprint exists
+PASS R40: assigned footprint exists
+PASS KiCad ERC: zero errors and warnings
+
+Not hardware tested. No PCB layout or firmware supplied.
