@@ -2,7 +2,8 @@
 
 An STM32G030-based Modbus RTU I/O expansion board with **8 isolated inputs**
 and **8 configurable outputs**. A hardware strap selects RS-485 or RS-232
-communication. Outputs support low-side, high-side, push-pull and PWM modes.
+communication, and a USB-C port (CH340C virtual COM port) gives the same Modbus
+link from a PC. Outputs support low-side, high-side, push-pull and PWM modes.
 
 | Directory | Contents |
 |---|---|

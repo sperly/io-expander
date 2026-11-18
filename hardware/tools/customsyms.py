@@ -4,6 +4,8 @@ Pin numbers are taken from the manufacturer datasheets:
   MAX3160EAP  - Maxim/ADI MAX3160-MAX3162 rev 3, 'Pin Description' (SSOP-20)
   DRV8912-Q1  - TI SLVSEC9C, 'Pin Functions - DRV8912-Q1' (HTSSOP-24 PWP)
   MCP23S08    - Microchip DS21919E, Table 1-1 (SSOP-20 column)
+  CH340C-3V3  - stock Interface_USB:CH340C with V3 typed power_in: at VCC = 3.3 V the WCH
+                datasheet ties V3 to VCC (internal regulator bypassed), so it is an input
 """
 import copy
 
@@ -169,10 +171,24 @@ def power_sym(name):
     return s
 
 
+def ch340c_3v3():
+    s = copy.deepcopy(symlib.get_symbol("Interface_USB", "CH340C"))
+    s[1] = "CH340C-3V3"
+    for p in find(s, "property"):
+        if p[1] == "Description":
+            p[2] = "USB serial converter, crystal-less, SOIC-16; 3.3 V supply (V3 tied to VCC)"
+    for sub in find(s, "symbol"):
+        sub[1] = "CH340C-3V3" + sub[1][len("CH340C"):]
+        for pin in find(sub, "pin"):
+            if find(pin, "number")[0][1] == "4":
+                pin[1] = Sym("power_in")
+    return s
+
+
 def build(path):
     lib = [Sym("kicad_symbol_lib"), [Sym("version"), 20241209], [Sym("generator"), "kicad_symbol_editor"],
            [Sym("generator_version"), "9.0"]]
-    lib += [max3160(), drv8912(), mcp23s08(), power_sym("VIO")]
+    lib += [max3160(), drv8912(), mcp23s08(), ch340c_3v3(), power_sym("VIO")]
     with open(path, "w", encoding="utf-8") as f:
         f.write(dump(lib) + "\n")
 

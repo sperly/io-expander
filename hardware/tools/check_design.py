@@ -20,13 +20,15 @@ FPDIR = "/usr/share/kicad/footprints"
 
 # net name (as KiCad reports the short name) -> nodes that must all be on it
 EXPECT = {
-    "+5V": ["J1.1", "U1.1", "U1.3", "JP1.3", "JP8.2"],
-    "+3V3": ["U1.5", "U2.4", "U3.4", "U4.2", "U4.12", "U4.9", "U5.6", "U8.20", "J3.1"],
+    "+5V": ["J1.1", "U1.1", "U1.3", "JP1.3", "JP8.2", "D4.1"],
+    "+3V3": ["U1.5", "U2.4", "U3.4", "U4.2", "U4.12", "U4.9", "U5.6", "U8.20", "J3.1",
+             "U10.16", "U10.4", "R44.1"],
     "VIO": ["JP1.2", "U5.16", "U5.21", "J6.2", "J7.2", "R1.1"],
     "EXT_VIO": ["J2.1", "JP1.1"],
     "GND": ["J1.2", "J2.2", "U1.2", "U2.5", "U3.2", "U3.5", "U4.4", "U4.10", "U5.1", "U5.13", "U5.24",
             "U5.25", "U8.9", "U8.4", "U8.5", "J3.3", "J3.5", "J3.9", "J4.4", "J6.1", "J7.1", "J5.2",
             "D2.3", "D3.1", "D1.1", "JP2.2", "JP3.2", "JP4.1", "J10.5", "J10.SH",
+            "J11.A1", "J11.A12", "J11.B1", "J11.B12", "J11.SH", "U9.2", "U10.1", "R42.2", "R43.2",
             # opto phototransistor emitters (TLP290-4: E = 15, 13, 11, 9)
             "U6.15", "U6.13", "U6.11", "U6.9", "U7.15", "U7.13", "U7.11", "U7.9"],
     "VIO_ADC": ["R1.2", "R2.1", "C5.1", "D1.3", "U2.7"],
@@ -40,8 +42,12 @@ EXPECT = {
     "IN_nCS": ["U2.12", "U8.7"],
     "DRV_nSLEEP": ["U2.14", "U5.8"],
     "SER_DE": ["U2.15", "U4.15"],
-    "UART_TX": ["U2.16", "U4.16"],
-    "UART_RX": ["U2.17", "U4.8"],
+    "UART_TX": ["U2.16", "U4.16", "U10.3"],
+    # UART_RX is a wired-AND: D5 (BAT54A, 3 = common anode) with pull-up R44;
+    # cathode 2 <- MAX3160 RO, cathode 1 <- CH340C TXD
+    "UART_RX": ["U2.17", "D5.3", "R44.2"],
+    "MAX_RO": ["U4.8", "D5.2"],
+    "USB_TXD": ["U10.2", "D5.1"],
     "SWDIO": ["U2.18", "J3.2"],
     "SWCLK": ["U2.19", "J3.4"],
     "I2C_SDA": ["U2.1", "U3.3"],
@@ -53,6 +59,12 @@ EXPECT = {
     "LINE_B_TXD": ["U4.5", "J4.2", "D2.1", "J10.2"],
     "LINE_RXD": ["U4.13", "J4.3", "D3.2", "J10.3"],
     "MODE": ["U4.11", "JP4.2"],
+    # USB-C (J11), USBLC6-2SC6 (U9: I/O1 = 1, 6; I/O2 = 3, 4; VBUS = 5), CH340C (U10: UD+ = 5, UD- = 6)
+    "VBUS": ["J11.A4", "J11.A9", "J11.B4", "J11.B9", "U9.5", "D4.2", "C22.1"],
+    "CC1": ["J11.A5", "R42.1"],
+    "CC2": ["J11.B5", "R43.1"],
+    "USB_DM": ["J11.A7", "J11.B7", "U9.1", "U9.6", "U10.6"],
+    "USB_DP": ["J11.A6", "J11.B6", "U9.3", "U9.4", "U10.5"],
     # DRV8912-Q1 PWP: OUT1..8 = pins 2, 23, 14, 11, 3, 10, 4, 22
     # output terminals: pin 1 = GND, 2 = VIO, 3..6 = OUT4..OUT1 (OUT8..OUT5)
     "OUT1": ["U5.2", "J6.6"], "OUT2": ["U5.23", "J6.5"], "OUT3": ["U5.14", "J6.4"], "OUT4": ["U5.11", "J6.3"],
@@ -71,9 +83,11 @@ SAME_NET = [("J10.6", "JP8.1")]
 # field-side nets must not touch logic nets
 ISOLATED_NETS = ["COM1", "COM2"]
 # pins of the same part that must NOT share a net
-MUST_DIFFER = [("U4.6", "U4.5"), ("U4.5", "U4.13"), ("U4.11", "U4.4"), ("U4.15", "U4.4")]
+MUST_DIFFER = [("U4.6", "U4.5"), ("U4.5", "U4.13"), ("U4.11", "U4.4"), ("U4.15", "U4.4"),
+               ("J11.A5", "J11.B5"), ("U4.8", "U2.17"), ("U10.2", "U2.17"), ("U4.8", "U10.2")]
 NO_CONNECT_OK = {"J3.6", "J3.7", "J3.8", "U1.4", "U4.7", "U4.14", "U5.9", "U5.15", "U5.17", "U5.18",
-                 "U8.10", "U8.11", "J10.4", "J10.7", "J10.8", "J10.9"}
+                 "U8.10", "U8.11", "J10.4", "J10.7", "J10.8", "J10.9", "J11.A8", "J11.B8",
+                 *(f"U10.{n}" for n in range(7, 16))}
 
 
 def netlist():
@@ -86,7 +100,9 @@ def netlist():
     fps = dict(re.findall(r'\(comp\s*\(ref "([^"]+)"\).*?\(footprint "([^"]*)"\)', t, re.S))
     nets = {}
     for blk in re.split(r"\(net\s*\n", t[t.index("(nets"):])[1:]:
-        name = re.search(r'\(name "([^"]*)"\)', blk).group(1).rsplit("/", 1)[-1]
+        full = re.search(r'\(name "([^"]*)"\)', blk).group(1)
+        # sheet path prefix off; unconnected-(...) names can contain '/' inside a pin name
+        name = full if full.startswith("unconnected-") else full.rsplit("/", 1)[-1]
         nodes = {f"{r}.{p}" for r, p in re.findall(r'\(ref "([^"]+)"\)\s*\(pin "([^"]+)"\)', blk)}
         nets[name] = nodes
     return comps, fps, nets

@@ -4,7 +4,7 @@ import os
 
 from sexp import Sym, find, find1, parse
 
-STOCK = "/usr/share/kicad/symbols"
+STOCK = os.environ.get("KICAD_SYMBOL_DIR", "/usr/share/kicad/symbols")
 _cache = {}
 
 

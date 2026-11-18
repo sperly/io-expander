@@ -85,6 +85,15 @@ CAT = {
                 "C1855817", "DRV8912QPWPRQ1", "Texas Instruments", "12-ch SPI half-bridge driver"),
     "MCP23S08": ("MCP23S08T-E/SS", "Package_SO:SSOP-20_5.3x7.2mm_P0.65mm", "C145600", "MCP23S08T-E/SS",
                  "Microchip", "8-bit SPI I/O expander"),
+    "5k1": ("5.1k", R0603, "C23186", "0603WAF5101T5E", "UNI-ROYAL", "1% 0.1W 0603"),
+    "USBC": ("USB-C", "Connector_USB:USB_C_Receptacle_HRO_TYPE-C-31-M-12", "C165948", "TYPE-C-31-M-12",
+             "HRO", "USB Type-C receptacle 16P (USB 2.0), SMD right angle"),
+    "CH340C": ("CH340C", "Package_SO:SOIC-16_3.9x9.9mm_P1.27mm", "C84681", "CH340C", "WCH",
+               "USB to UART, crystal-less, SOP-16"),
+    "USBLC6": ("USBLC6-2SC6", "Package_TO_SOT_SMD:SOT-23-6", "C2687116", "USBLC6-2SC6", "UMW",
+               "USB ESD protection, 2 lines + VBUS"),
+    "B5819W": ("B5819W", "Diode_SMD:D_SOD-123", "C8598", "B5819W SL", "CJ", "Schottky 40V 1A SOD-123"),
+    "BAT54A": ("BAT54A", SOT23, "C130910", "BAT54A,215", "Nexperia", "dual Schottky, common anode"),
 }
 
 
@@ -187,7 +196,8 @@ cap_to_gnd(pw, "4u7_0805", g(56), g(18))
 cap_to_gnd(pw, "100n", g(62), g(18))
 pw.power("+3V3", (g(68), g(18)))
 pw.note((g(8), g(28)), "J1: regulated 5 V (4.75 - 5.25 V).  AP2112K 600 mA LDO, board logic < 50 mA.\n"
-        "No reverse-polarity protection: check the wiring before applying power.")
+        "No reverse-polarity protection: check the wiring before applying power.\n"
+        "+5V can also come from USB-C VBUS through D4 (serial sheet).")
 
 pw.frame(g(6), g(40), g(80), g(76), "OUTPUT DRIVER SUPPLY  VIO   (4.5 - 14 V)")
 v, f = cat("TB2", "VIO EXT IN")
@@ -331,7 +341,7 @@ se.wire(U4[17], (U4[17][0], g(60)), (g(68), g(60)))
 cap_to_gnd(se, "100n", g(68), g(60))
 # logic side
 se.stub(U4[16], "UART_TX", "left", g(6), shape="input")
-se.stub(U4[8], "UART_RX", "left", g(6), shape="output")
+se.stub(U4[8], "MAX_RO", "left", g(6), kind="local")
 se.nc(U4[7])
 yh, ys, yf = U4[12][1], U4[9][1], U4[10][1]
 se.wire(U4[12], (xl - g(2), yh), (xl - g(2), ys), U4[9])          # HDPLX + SHDN high
@@ -605,11 +615,82 @@ ins.note((g(110), g(70)), "SPI mode 0, hardware address A1 = A0 = 0.\n"
          "GP0..GP7 inputs, IPOL = 0xFF (active = 1).\n"
          "INT: open-drain, active low.")
 
+
+# ============================================================== 4  serial (cont.): USB-C serial
+# Added after all other parts so the existing references (and the PCB link) are unchanged.
+se.frame(g(6), g(84), g(104), g(110), "USB-C SERIAL   CH340C   (virtual COM port on USART1, shared with the MAX3160)")
+v, f = cat("USBC")
+f["Description"] = "USB 2.0 Type-C receptacle (UFP): VBUS powers +5V through D4"
+J11 = se.add("Connector", "USB_C_Receptacle_USB2.0_16P", "J11", v, g(14), g(96),
+             text={"Reference": (-7.62, -19.05, "left"), "Value": (-7.62, -16.51, "left")}, **f)
+yV = J11["A4"][1]
+# VBUS -> ESD reference, bulk cap, Schottky -> +5V
+U10 = part(se, "Power_Protection", "USBLC6-2SC6", "USBLC6", "U", g(36), g(96),
+           text={"Reference": (3.81, -5.08, "left"), "Value": (3.81, 7.62, "left")})
+v, f = cat("B5819W")
+D4 = se.add("Device", "D_Schottky", ref("D"), v, g(42), yV, rot=180,
+            text={"Reference": (0, -2.54, None), "Value": (0, 2.54, None)}, **f)
+se.wire(J11["A4"], D4[2])
+se.label((g(22), yV), "VBUS", 0, kind="local")
+se.wire(U10[5], (U10[5][0], yV))
+cap_to_gnd(se, "1u", g(32), yV, left_text=True)
+se.wire(D4[1], (g(46), yV))
+se.power("+5V", (g(46), yV))
+# CC pull-downs: 5.1k each = USB device (UFP), 5 V default current
+se.stub(J11["A5"], "CC1", "right", g(3), kind="local")
+se.stub(J11["B5"], "CC2", "right", g(3), kind="local")
+for name, x in (("CC1", g(24)), ("CC2", g(30))):
+    se.label((x, g(101)), name, 90, kind="local")
+    pulldown(se, "5k1", x, g(101))
+# D- (A7/B7) -> USBLC6 I/O1 (pins 1/6),  D+ (A6/B6) -> USBLC6 I/O2 (pins 3/4)
+se.wire(J11["A7"], J11["B7"])
+se.wire(J11["A6"], J11["B6"])
+se.wire(J11["A7"], (g(30), J11["A7"][1]), (g(30), U10[1][1]), U10[1])
+se.wire(J11["A6"], U10[3])
+se.stub(U10[6], "USB_DM", "right", g(3), kind="local")
+se.stub(U10[4], "USB_DP", "right", g(3), kind="local")
+se.label((g(23), J11["A7"][1]), "USB_DM", 0, kind="local")
+se.label((g(23), J11["A6"][1]), "USB_DP", 0, kind="local")
+se.power("GND", U10[2])
+se.power("GND", J11["A1"])
+se.wire(J11["SH"], J11["A1"])
+se.nc(J11["A8"])
+se.nc(J11["B8"])
+# CH340C on the 3.3 V rail (V3 tied to VCC)
+U9 = part(se, "IO8", "CH340C-3V3", "CH340C", "U", g(58), g(97), path=LIB,
+          text={"Reference": (3.81, 17.78, "left"), "Value": (3.81, 20.32, "left")})
+yt = U9[16][1] - g(2)
+se.wire(U9[16], (U9[16][0], yt), (g(50), yt))
+se.wire(U9[4], (U9[4][0], yt), (U9[16][0], yt))
+se.power("+3V3", (U9[16][0], yt))
+cap_to_gnd(se, "100n", g(50), yt, left_text=True)
+se.power("GND", U9[1])
+se.stub(U9[5], "USB_DP", "left", g(3), kind="local")
+se.stub(U9[6], "USB_DM", "left", g(3), kind="local")
+for p_ in (7, 8, 9, 10, 11, 12, 13, 14, 15):
+    se.nc(U9[p_])
+se.stub(U9[3], "UART_TX", "right", g(3), shape="input")
+# wired-AND of the two receivers onto UART_RX: idle high, either source pulls it low
+v, f = cat("BAT54A")
+D5 = se.add("Diode", "BAT54A", ref("D"), v, g(73), g(89),
+            text={"Reference": (0, -3.81, None), "Value": (2.54, 3.81, "left")}, **f)
+se.wire(U9[2], (g(66), U9[2][1]), (g(66), D5[1][1]), D5[1])
+se.label((g(66), D5[1][1]), "USB_TXD", 180, kind="local")
+se.stub(D5[2], "MAX_RO", "right", g(3), kind="local")
+yr = g(97)
+se.wire(D5[3], (D5[3][0], yr), (g(86), yr))
+pullup(se, "4k7", g(80), yr)
+se.label((g(86), yr), "UART_RX", 0, shape="output")
+se.note((g(64), g(102)), "CC1 / CC2 5.1k: USB device, up to 500 mA from VBUS.\n"
+        "D4: USB VBUS -> +5V (about 4.6 V); J1 and USB may be connected together.\n"
+        "UART_RX = MAX3160 RO AND CH340C TXD (D5, 4.7k pull-up): both host links\n"
+        "are live; use only one at a time. UART_TX drives both.")
+
 # ============================================================== 1  root
 sheets = [
     (pw, (g(10), g(16)), "J1 5 V in, AP2112K 3.3 V LDO,\nJ2 + JP1 output supply VIO,\nVIO monitor divider"),
     (mc, (g(44), g(16)), "STM32G030F6P6, 24AA02 EEPROM,\naddress straps, SWD header"),
-    (se, (g(78), g(16)), "MAX3160 RS-485 / RS-232,\nMODE strap, TVS, termination,\nbias, J4 terminal, J10 DB9"),
+    (se, (g(78), g(16)), "MAX3160 RS-485 / RS-232, MODE strap,\nTVS, termination, bias, J4, J10 DB9,\nJ11 USB-C + CH340C"),
     (dr, (g(44), g(32)), "DRV8912-Q1 half-bridge driver,\n8 outputs, terminals J6 / J7"),
     (ins, (g(78), g(32)), "8 isolated opto inputs (TLP290-4),\nterminals J8 / J9, MCP23S08"),
 ]
@@ -619,7 +700,8 @@ for sh, at, desc in sheets:
 root.note((g(8), g(6)), "RS485_IO8 rev B  -  8 isolated inputs, 8 outputs, RS-485 / RS-232 host link",
           size=3.0, bold=True)
 root.note((g(10), g(44)), "Signal flow\n"
-          "  host  <->  J4  <->  MAX3160  <->  USART1 of the STM32G030\n"
+          "  host  <->  J4 / J10  <->  MAX3160  <->  USART1 of the STM32G030\n"
+          "  host  <->  J11 USB-C  <->  CH340C  <->  USART1 (shared, wired-AND on RX)\n"
           "  STM32G030 SPI1  ->  DRV8912 (outputs)   and   MCP23S08 (inputs)  ->  STM32G030\n"
           "  OUTx terminal  <-  DRV8912 OUTx,   INx terminal  ->  TLP290-4  ->  MCP23S08 GPx", size=1.27)
 root.table((g(10), g(52)), [
@@ -628,6 +710,7 @@ root.table((g(10), g(52)), [
     (J2.ref, "VIO EXT IN", "1 = EXT_VIO, 2 = GND   (4.5 - 14 V, used with JP1 1-2)"),
     (J4.ref, "SERIAL", "1 = A, 2 = B / TXD, 3 = RXD, 4 = GND"),
     (J10.ref, "DB9 SERIAL", "1 = A, 2 = B / TXD, 3 = RXD, 5 = GND, 6 = +5 V (JP8)"),
+    (J11.ref, "USB-C", "USB 2.0 device, CH340C virtual COM port; VBUS can power the board"),
     (io_terms[0].ref, "OUT1-OUT4", "1 = GND, 2 = VIO, 3 = OUT4, 4 = OUT3, 5 = OUT2, 6 = OUT1"),
     (io_terms[1].ref, "OUT5-OUT8", "1 = GND, 2 = VIO, 3 = OUT8, 4 = OUT7, 5 = OUT6, 6 = OUT5"),
     (in_terms[0].ref, "IN1-IN4", "1..4 = IN1..IN4, 5 = COM1   (isolated, 5 - 24 V, sink or source)"),
